@@ -1,21 +1,26 @@
 version: 1
 accounts:
-- name: alice
-  coins:
-  - 20000token
-  - 200000000stake
-- name: bob
-  coins:
-  - 10000token
-  - 100000000stake
+  - name: Alice
+    address: ''
+    coins:
+      - 1000000000000000utest
+  - name: Bob
+    address: ''
+    coins:
+      - 20000000000000000utest
+  - name: validator
+    address: ''
+    coins:
+      - 20000000000000000utest
 client:
   openapi:
     path: docs/static/openapi.yml
-faucet:
-  name: bob
-  coins:
-  - 5token
-  - 100000stake
 validators:
-- name: alice
-  bonded: 100000000stake
+  - name: validator
+    bonded: 20000000000000000utest
+genesis:
+  chain_id: test-12
+  app_state:
+    staking:
+      params:
+        bond_denom: utest
